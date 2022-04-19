@@ -1,0 +1,16 @@
+{% extends "AppFoodBlog/base.html" %}
+{% load static %}
+{% block bloque %}
+
+<p>
+    {% for posteo in object_list %}
+    
+    <li>
+        Nombre del post: <i>{{posteo.titulo}}</i>, Posteado por: <i>{{posteo.user}}</i> <a href="{% url 'Pages' posteo.id %}">Ver</a>
+    </li>
+    {% endfor %}
+</p>
+
+
+
+{% endblock bloque %}

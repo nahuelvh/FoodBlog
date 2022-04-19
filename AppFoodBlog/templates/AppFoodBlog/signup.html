@@ -1,0 +1,23 @@
+{% extends "AppFoodBlog/base.html" %}
+{% load static %}
+{% block bloque %}
+
+<body>
+
+    <form action="" method="POST">
+
+        {% csrf_token %}
+
+        {{form.as_p}}
+
+        <button type="submit">Registrarse</button>
+
+    </form>
+
+</body>
+
+
+
+
+
+{% endblock bloque %}

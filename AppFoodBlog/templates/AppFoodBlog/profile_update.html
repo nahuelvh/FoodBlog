@@ -1,0 +1,15 @@
+{% extends "AppFoodBlog/base.html" %}
+{% load static %}
+{% block bloque %}
+
+<h1> Perfil del usuario: {{usuario}} </h1>
+
+<form action="" method="POST">{% csrf_token %}
+
+    <table>
+        {{ formulario.as_table }}
+    </table>
+
+    <input type="submit" value="Actualizar Datos">
+
+{% endblock bloque %}

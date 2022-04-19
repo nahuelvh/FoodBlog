@@ -1,0 +1,18 @@
+{% extends "AppFoodBlog/base.html" %}
+{% load static %}
+{% block bloque %}
+
+<div class="container-fluid"></div>
+    <form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
+        
+        <table>
+            <strong>Estás seguro que deseas borrar el post?</strong>
+        </table>
+
+        <input type="submit" value="Eliminar Post">
+        
+    </form>
+
+</div>
+
+{% endblock bloque %}

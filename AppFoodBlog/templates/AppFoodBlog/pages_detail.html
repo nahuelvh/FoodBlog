@@ -1,0 +1,28 @@
+{% extends "AppFoodBlog/base.html" %}
+{% load static %}
+{% block bloque %}
+
+
+<p>Nombre del post: <i>{{posteo.titulo}}</i></p>
+<p>Creado Por: <i>{{posteo.user}}</i>, Fecha de publicación: <i>{{posteo.fechaPublicacion}}</i></p>
+<p>Subtitulo: <i>{{posteo.subtitulo}}</i></p>
+
+<p>Texto: <i>{{ posteo.texto|safe }}</i></p>
+
+
+{% if posteo.imagen %}
+    <img src="{{ posteo.imagen.url }}">
+{% endif %}
+
+<p></p>
+
+{% if user.id == posteo.user.id %}
+
+<a href="{% url 'Pages_update' posteo.id %}"> Editar Posteo</a>
+<a href="{% url 'Pages_delete' posteo.id %}"> Eliminar Posteo</a>
+
+{% endif %}
+
+
+{% endblock bloque %}
+
