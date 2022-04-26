@@ -1,0 +1,22 @@
+{% extends "AppFoodBlog/base.html" %}
+{% load static %}
+{% block bloque %}
+
+{% if not usuarios %}
+
+    No hay usuarios con quien iniciar un chat aún
+
+{% else %}
+
+<p class="ms-3"> Con quien deseas chatear hoy: </p>
+
+    {% for usuario in usuarios %}
+
+    <li class="ms-3"><a href="{% url 'chat' usuario %}"> Chat con {{ usuario }} </a></li>
+
+    {% endfor %}
+
+{% endif %}
+
+{% endblock bloque %}
+

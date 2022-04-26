@@ -11,10 +11,13 @@ class RegistroUsuarioForm(UserCreationForm):
     password2 = forms.CharField(label='Repetir Contraseña', widget=forms.PasswordInput)
     first_name = forms.CharField(label='Nombre')
     last_name = forms.CharField(label='Apellido')
+    url = forms.URLField(label='URL', required=False)
+    descripcion = forms.CharField(label='Descripcion', required=False)
+    
 
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'username', 'email', 'password1', 'password2' ]
+        fields = ['username', 'first_name', 'last_name', 'descripcion', 'email', 'url', 'password1', 'password2']
         help_text = { k: "" for k in fields }
 
 
@@ -25,8 +28,12 @@ class UserEditForm(UserCreationForm):
     password2 = forms.CharField(label='Repetir Contraseña', widget=forms.PasswordInput)
     first_name = forms.CharField(label='Nombre')
     last_name = forms.CharField(label='Apellido')
+    url = forms.URLField(label='URL', required=False)
+    descripcion = forms.CharField(label='Descripcion', required=False)
+    avatar = forms.ImageField(label='Avatar', required=False)
 
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'email', 'password1', 'password2' ]
+        fields = ['username', 'first_name', 'last_name', 'descripcion', 'email', 'url', 'password1', 'password2', 'avatar']
         help_text = { k: "" for k in fields }
+        exclude = ['username',]

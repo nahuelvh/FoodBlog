@@ -7,8 +7,10 @@
     <form action="" method="POST">
 
         {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
 
-        {{form.as_p}}
 
         <button type="submit">Registrarse</button>
 

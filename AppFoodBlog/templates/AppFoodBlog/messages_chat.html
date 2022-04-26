@@ -1,0 +1,34 @@
+{% extends "AppFoodBlog/base.html" %}
+{% load static %}
+{% block bloque %}
+
+<div class="ms-3">
+{% if not mensajes %}
+
+    <p>No tienes mensajes aún con {{ receptor }}, envíale uno!</p>
+
+{% endif %}
+
+    {% for mensaje in mensajes %}
+
+    <p> {{ mensaje.fechaMensaje }}, enviado por: {{ mensaje.userEmisor }} </p>
+    <p><strong> {{ mensaje.texto }} </strong></p>
+    <hr/>
+
+    {% endfor %}
+
+<form method="POST">{% csrf_token %}
+
+        <strong>Nuevo Mensaje para {{ receptor }}: </strong>
+    
+        <p>Mensaje: <input type="text" name="texto"></p>
+        
+        {% if not error == "" %}
+            <p style="color:red;"> {{error}} </p> 
+        {% endif %}
+
+        <input type="submit" value="Enviar Mensaje">
+    </form>
+
+</div>
+{% endblock bloque %}
