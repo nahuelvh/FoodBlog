@@ -1,0 +1,21 @@
+{% extends "AppFoodBlog/base.html" %}
+{% load static %}
+{% block bloque %}
+
+<h1> Perfil del usuario: {{ request.user }} </h1>
+
+<table>
+    <p><strong>Nombre: </strong>{{request.user.first_name}} </p>
+    <p><strong>Apellido: </strong>{{request.user.last_name}}</p>
+    <p><strong>Descripcion: </strong>{{request.user.usuario.descripcion}}</p>
+    <p><strong>E-mail: </strong>{{request.user.email}}</p>
+    <p><strong>URL: </strong>{{request.user.usuario.url}}</p>
+    <p><strong>Avatar:</strong></p>
+    {% if request.user.usuario.avatar %}
+        <p><img src="{{ request.user.usuario.avatar.url }}"></p>
+    {% endif %}
+</table>
+
+<a class="nav-link" href="{% url 'Profile_update' user.id %}">Editar Perfil</a>
+
+{% endblock bloque %}

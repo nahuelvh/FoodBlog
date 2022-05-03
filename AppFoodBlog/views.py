@@ -1,3 +1,4 @@
+from asyncio.windows_events import NULL
 from datetime import datetime
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
@@ -166,11 +167,19 @@ def pagesUpdate(request, posteo_id):
 
     return render(request, "AppFoodBlog/pages_update.html", {"formulario": formulario, "posteo_id": posteo_id})
 
+def Perfil(request):
+
+    return render (request, "AppFoodBlog/profile.html")
+
 def editarPerfil(request, user_id):
 
     user = request.user
     
-    usuario = Usuario.objects.get(user_id = user_id)
+    try:
+        usuario = Usuario.objects.get(user_id = user_id)
+    except:
+        usuario = Usuario(user= user, descripcion = "", url = "", avatar = "")
+        usuario.save()
 
     if request.method == "POST":
 
