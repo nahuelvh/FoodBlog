@@ -8,6 +8,10 @@ FoodBlog es una aplciación creada como proyecto final para el curso de python r
 Tiene como objetivo el compartir experiencias culinarias ya sean recetas propias como visitas a lugares de comida. Cualquiera puede acceder a los posteos 
 de los usuario registrados. Solo estos últimos podrán dejar comentarios y mensajearse por la aplicación de mensageria.
 
+Video de la aplicación en funcionamiento: https://youtu.be/LRHX6e9i0AE
+
+El archivo con los test unitario está en el raiz del GitHub con el nombre: "Casos de prueba.xlsx"
+
 Roadmap:
   - Adicionar la posibilidad de categorizar los posteos en Recetas y Visitas.
   - Adicionar a las visitas la posibilidad de indicar la ubicación del lugar, visualizandolo en un mapa. También poder agregar el nombre del mismo 
